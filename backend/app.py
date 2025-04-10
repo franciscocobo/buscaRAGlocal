@@ -23,7 +23,7 @@ class DataConfig(BaseModel):
     docs_folder: Path = folder  # Carpeta donde se almacenan los documentos
 
 class LLMConfig(BaseModel):
-    model: str = "llama3:latest"  # Modelo de lenguaje a utilizar
+    model: str = "deepseek-r1:1.5b"  # Modelo de lenguaje a utilizar
 
 class Config(BaseModel):
     data: DataConfig = DataConfig()
@@ -54,7 +54,7 @@ def initialize_vectorstore():
     vectorstore = Chroma.from_documents(
         documents=all_splits,
         embedding=local_embeddings,
-        collection_name="new_collection_5",
+        collection_name="new_collection_6",
         persist_directory="vectorstore"
     )
 
